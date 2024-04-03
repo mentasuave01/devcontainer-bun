@@ -1,4 +1,4 @@
-name: 'Build Image'
+name: 'Build bun Image'
 
 on:
   workflow_dispatch:
