@@ -11,17 +11,11 @@ RUN apt-get update \
     && apt-get auto-remove -y \
     && apt-get clean -y
 
-# Add group and user
-RUN if getent group 1000; then \
-        echo "Group with GID 1000 already exists"; \
-    else \
-        groupadd --gid 1000 developer; \
-    fi \
-    && useradd --uid 1000 --gid 1000 --shell /bin/zsh --create-home developer
+# Change the shell prompt
+ENV PS1="bun:\\w# "
 
-# Change the prompt in the .bashrc and .zshrc 
-RUN echo 'export PS1="/com.docker.devenvironments.code/ "' >> /home/developer/.bashrc \
-    && echo 'export PS1="/com.docker.devenvironments.code/ "' >> /home/developer/.zshrc
+# Optionally, set Zsh as the default shell if desired
+RUN chsh -s $(which zsh)
 
 # Set username
 USER developer
