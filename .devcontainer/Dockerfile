@@ -11,17 +11,15 @@ RUN apt-get update && apt-get install -y \
     && apt-get clean
 
 # Set up nvm environment
-ENV NVM_DIR /usr/local/nvm
 ENV NODE_VERSION lts/*
 
 # Install nvm
 RUN rm /bin/sh && ln -s /bin/bash /bin/sh
-RUN mkdir -p $NVM_DIR \
-    && curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash \
-    && . $NVM_DIR/nvm.sh 
+RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+
 
 # install Node.js
-RUN nvm install $NODE_VERSION 
+RUN source ~/.nvm/nvm.sh && nvm i --lts
 
 # Change the shell prompt
 ENV PS1="bun:\\w# "
