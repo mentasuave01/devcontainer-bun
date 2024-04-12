@@ -19,10 +19,8 @@ ENV PS1="bun:\\w# "
 RUN chsh -s $(which zsh)
 
 # Installing Node.js 
-ENV NVM_DIR /usr/local/nvm
 RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash \
-    && . $NVM_DIR/nvm.sh \
-    && nvm install --lts
+    && nvm i --lts
 
 # Set username
 USER dev
