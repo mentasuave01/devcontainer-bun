@@ -16,9 +16,16 @@ Before you begin, make sure you have the following tools installed on your syste
 * [Docker Desktop](https://www.docker.com/products/docker-desktop/)
 
 
-## Getting Started
+## Easy set up, just drag and drop
 
-Just copy the compose-dev.yaml into your repo and use create in Docker Desktop dev Enviroments to create a dev enviroment.
+tl;dr: Just drop the .yaml release file into your project and docker desktop will do the rest for you on create
+
+1. Download compose-dev.yaml file: https://github.com/mentasuave01/devcontainer-bun/releases/download/bun-devContainer/compose-dev.yaml
+2. Copy it into the target repo/folder
+3. Open docker desktop -> Dev Enviroments -> create 
+4. Just point choice source to the repo you uploaded the .yaml file or the local folder it's in
+5. DONE
+
 
 ## Additional Information
 
