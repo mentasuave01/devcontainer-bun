@@ -24,7 +24,4 @@ RUN source ~/.nvm/nvm.sh && nvm i --lts
 # Change the shell prompt
 ENV PS1="bun:\\w# "
 
-# Set username
-USER developer
-
 WORKDIR /com.docker.devenvironments.code/
