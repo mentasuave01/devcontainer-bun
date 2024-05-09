@@ -7,6 +7,8 @@ RUN apt-get update && apt-get install -y \
     curl \
     git \
     nano \
+    --reinstall ca-certificates \
+    && apt-get update \
     && rm -rf /var/lib/apt/lists/* \
     && apt-get clean
 
