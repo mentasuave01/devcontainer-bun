@@ -4,12 +4,11 @@ FROM oven/bun:${VARIANT}
 
 # Install required system packages
 RUN apt-get update && apt-get install -y \
+    ca-certificates \
     curl \
     git \
     nano \
-    --reinstall ca-certificates \
     && apt-get update \
-    && rm -rf /var/lib/apt/lists/* \
     && apt-get clean
 
 # Set up nvm environment
