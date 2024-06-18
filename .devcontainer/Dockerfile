@@ -4,12 +4,14 @@ FROM oven/bun:${VARIANT}
 
 # Install required system packages
 RUN apt-get update && apt-get install -y \
-    ca-certificates \
     curl \
     git \
     nano \
-    && apt-get update \
+    python3 \
+    build-essential \
+    ca-certificates \
     && apt-get clean
+
 
 # Set up nvm environment
 ENV NODE_VERSION lts/*
