@@ -3,7 +3,7 @@ services:
     entrypoint:
       - sleep
       - infinity
-    image:  ghcr.io/mentasuave01/devcontainer-bun:1.1.18
+    image:  docker pull ghcr.io/mentasuave01/devcontainer-bun:1.1.21
     init: true
     volumes:
       - type: bind
