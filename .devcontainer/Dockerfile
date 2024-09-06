@@ -18,7 +18,7 @@ ENV NODE_VERSION lts/*
 
 # Install nvm
 RUN rm /bin/sh && ln -s /bin/bash /bin/sh
-RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
 
 
 # install Node.js
