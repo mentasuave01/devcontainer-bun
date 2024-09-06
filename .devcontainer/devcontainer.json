@@ -19,7 +19,9 @@
 		"mhutchie.git-graph",
 		"jock.svg",
 		"bradlc.vscode-tailwindcss",
-		"Gruntfuggly.todo-tree"
+		"Gruntfuggly.todo-tree",
+		"Supermaven.supermaven",
+		"bradlc.vscode-tailwindcss"
             ]
         }
     }
