@@ -1,10 +1,10 @@
-name: 'Build bun Image'
+name: "Build bun Image"
 
 on:
   workflow_dispatch:
     inputs:
       bunVersion:
-        description: 'Bun Version'
+        description: "Bun Version"
         required: true
         type: string
       setLatest:
@@ -61,6 +61,15 @@ jobs:
           platforms: |
             linux/amd64
             linux/arm64
-          push: true 
+          push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
+
+      - name: Update compose-dev.yaml with new bun version
+        run: |
+          sed -i 's/devcontainer-bun:[0-9.]\+/devcontainer-bun:${{ inputs.bunVersion }}/g' compose-dev.yaml
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add compose-dev.yaml
+          git commit -m "chore: update compose-dev.yaml to bun ${{ inputs.bunVersion }}"
+          git push
