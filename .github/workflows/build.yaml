@@ -37,12 +37,7 @@ jobs:
           flavor: |
             latest=false
           tags: |
-            type=semver,pattern=v{{major}}.{{minor}}.{{patch}},value=v${{ inputs.bunVersion }}
-            type=semver,pattern=v{{major}}.{{minor}},value=v${{ inputs.bunVersion }}
-            type=semver,pattern=v{{major}},value=v${{ inputs.bunVersion }}
             type=semver,pattern={{major}}.{{minor}}.{{patch}},value=v${{ inputs.bunVersion }}
-            type=semver,pattern={{major}}.{{minor}},value=v${{ inputs.bunVersion }}
-            type=semver,pattern={{major}},value=v${{ inputs.bunVersion }}
             type=raw,value=latest,enable=${{ inputs.setLatest }}
 
       - name: Log in to GitHub Container Registry
